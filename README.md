@@ -9,6 +9,46 @@ To build a classification methodology to predict whether a website is a phishing
 Phishing is a method in which the attackers trick users into revealing sensitive information to be used in committing fraudulent activities. Phishers have used many sophisticated techniques to deceive unaware users such as leveraging social engineering tactics and technology to deliver well-crafted emails to delude users into that emails are legitimate.
 The objective of the project is to classify the website as phishing and legitimate.
 
+## SAMPLE OF DATASET:
+
+This dataset describes the different parameters to judge whether a website is a phishing website.
+The columns are :
+1.	having_IP_Address [-1  1] 
+2.	URL_Length [ 1  0 -1]
+3.	Shortining_Service [ 1 -1]
+4.	having_At_Symbol [ 1 -1]
+5.	double_slash_redirecting [-1  1]
+6.	Prefix_Suffix [-1  1]
+7.	having_Sub_Domain [-1  0  1]
+8.	SSLfinal_State [-1  1  0]
+9.	Domain_registeration_length [-1  1]
+10.	Favicon [ 1 -1]
+11.	port [ 1 -1]
+12.	HTTPS_token [-1  1]
+13.	Request_URL [ 1 -1]
+14.	URL_of_Anchor [-1  0  1]
+15.	Links_in_tags [ 1 -1  0]
+16.	SFH [-1  1  0]
+17.	Submitting_to_email [-1  1]
+18.	Abnormal_URL [-1  1]
+19.	Redirect [0 1]
+20.	on_mouseover [ 1 -1]
+21.	RightClick [ 1 -1]
+22.	popUpWidnow [ 1 -1]
+23.	Iframe [ 1 -1]
+24.	age_of_domain [-1  1]
+25.	DNSRecord [-1  1]
+26.	web_traffic [-1  0  1]
+27.	Page_Rank [-1  1]
+28.	Google_Index [ 1 -1]
+29.	Links_pointing_to_page [ 1  0 -1]
+30.	Statistical_report [-1  1]
+31.	Result [-1  1]
+
+Apart from training files, we also require a "schema" file, which contains all the relevant information about the training files such as:
+Name of the files, Length of Date value in FileName, Length of Time value in FileName, Number of Columns, Name of the Columns, and their datatype.
+
+
 ## **Tools/Software Used:**
 
   Jupyter notebook 
@@ -21,8 +61,12 @@ The architecture that I followed for this project is :
 
 ![image](https://user-images.githubusercontent.com/69865169/177703864-b5ddf4c5-66f0-4968-933a-ddcc68f54dd2.png)
 
+## Logging Framework and Exception Handling is used extensively in this project.
+
 ## Steps Followed: 
 These are the steps that are followed in a sequential order  to implement this project : 
+
+
 ## Data Validation 
 In this step, I performed different sets of validation on the training files.  
 1.	 Name Validation- I validate the name of the files based on the given name in the schema file. I have created a regex pattern as per the name given in the schema file to use for validation. After validating the pattern in the name,  checked for the length of date in the file name as well as the length of time in the file name. If all the values are as per requirement, I move such files to "Good_Data_Folder" else move such files to "Bad_Data_Folder."
@@ -90,8 +134,8 @@ In this step, I performed different sets of validation on the training files.
 ![image](https://user-images.githubusercontent.com/69865169/177704157-99320b56-0762-4a5e-9c96-563abb32852f.png)
 
 ## CONCLUSION
-As we say “What we learn with pleasure, we never forget”, and the joy we had doing this project was boundless.
-My objective to take on this project was to fabricate a working phishing website detection model. I used various models to make predictions on a given file. Further with the help of GUI, created an interactive page where the user can give a default file path or custom file path and evaluate if the website is phishing or a legitimate one. Accuracy for the model came out to be 98.5%  using the XGBoost model. Other models were also used like SVM for training purposes but accuracy did not come out well. 
+As we say “What we learn with pleasure, we never forget”, and the joy I had doing this project was boundless.
+My objective to take on this project was to fabricate a working phishing website detection model. I used various models to make predictions on a given file. Further with the help of GUI, created an interactive page where the user can give a default file path or custom file path and evaluate if the website is phishing or a legitimate one. Used Exception handling to handle the errors in proper way and logging framework too which would be very useful by providing accurate context about what the user was doing when a specific error happened.Accuracy for the model came out to be 98.5%  using the XGBoost model. Other models were also used like SVM for training purposes but accuracy did not come out well. 
 By the end of this project, I was able to have a good understanding of how to implement the lifecycle of a machine learning project. With the means of this project, I also learned how to make a GUI/website using HTML, and CSS and further connect it with our python model. With all the knowledge we gained from this project, I can now easily make many more similar projects on any data. 
 
 ## FUTURE SCOPE
